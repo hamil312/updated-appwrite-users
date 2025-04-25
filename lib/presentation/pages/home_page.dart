@@ -27,12 +27,11 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _submitUser(UserController controller) async {
     if (_formKey.currentState!.validate()) {
-      final userId = await authController.getUserId();
       final user = UserModel(
         id: '',
         username: _usernameController.text,
         email: _emailController.text,
-        userId: userId,
+        userId: '',
       );
 
       controller.addUser(user);
